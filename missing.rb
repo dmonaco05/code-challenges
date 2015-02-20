@@ -1,9 +1,9 @@
 # This program takes an array from 1-100 and randomly deletes 1 number, these are some solutions to finding that missing number
 
 # Generate the random missing number array
-v = 100
+limit = 100
 array = Array.new
-1.upto(v) do |i|
+1.upto(limit) do |i|
   array << i
 end
 array.shuffle!
@@ -13,7 +13,7 @@ array.delete_at(rand(99))
 
 # 1st way will compare it's sum to the known value of the completed array
 # setting limit and determining known
-known = ((v+1)*(v/2))
+known = ((limit + 1)*(limit / 2))
 # subtract sum of array from known value to determine missing integer
 first = known - (array.inject(:+))
 puts "1st method: #{first}"
@@ -23,7 +23,7 @@ puts "1st method: #{first}"
 
 #  2nd way will create a complete array and compare to find the missing value
 
-second = (1..v).to_a - array
+second = (1..limit).to_a - array
 puts "2nd method: #{second.fetch(0)}"
 
 ##########################################################################
