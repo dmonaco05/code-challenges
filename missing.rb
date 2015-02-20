@@ -13,7 +13,7 @@ array.delete_at(rand(99))
 ########################################################################
 
 # 1st way will compare it's sum to the known value of the completed array
-# setting limit and determining known
+
 known = ((limit + 1)*(limit / 2))
 # subtract sum of array from known value to determine missing integer
 first = known - (array.inject(:+))
