@@ -1,4 +1,5 @@
-# This program takes an array from 1-100 and randomly deletes 1 number, these are some solutions to finding that missing number
+# This program takes an array from 1-100 and randomly deletes 1 number
+# these are some solutions to finding that missing number
 
 # Generate the random missing number array
 limit = 100
