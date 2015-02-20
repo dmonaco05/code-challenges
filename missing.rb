@@ -1,11 +1,11 @@
-# This program takes an array from 1-100 and randomly deletes 1 number, these are all the solutions to finding that missing number
+# This program takes an array from 1-100 and randomly deletes 1 number, these are some solutions to finding that missing number
 
 # Generate the random missing number array
 array = Array.new
 1.upto(100) do |i|
   array << i
 end
-
+array.shuffle!
 array.delete_at(rand(99))
 
 # 1st way will take the unsorted array, and compare it's sum to the known value of the completed array
@@ -14,8 +14,8 @@ array.delete_at(rand(99))
 v = 100
 known = ((v+1)*(v/2))
 # subtract sum of array from known value to determine missing integer
-known - (array.inject(:+))
-
+first = known - (array.inject(:+))
+puts "1st method: #{first}"
 
 #################################################################################################
 
@@ -23,8 +23,8 @@ known - (array.inject(:+))
 #  2nd way will create a complete array and compare to find the missing value
 
 v = 100
-(1..v).to_a - array
-
+second = (1..v).to_a - array
+puts "2nd method: #{second}"
 
 ###################################################################################################
 
@@ -35,4 +35,4 @@ i = 1
 while array.include?(i)
     i += 1
 end
-puts i
+puts "3rd method: #{i}"
