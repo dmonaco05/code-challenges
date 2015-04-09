@@ -30,3 +30,41 @@ even_seq = []
 fib_seq.each { |i| even_seq << i if i % 2 == 0 }
 return even_seq.inject(:+)
 
+
+# 3 - The prime factors of 13195 are 5, 7, 13 and 29.
+# What is the largest prime factor of the number 600851475143 ?
+
+require 'prime'
+n3 = 6008514143
+count = -1
+# find the greatest prime factor by ensuring the prime divisible is a single factor
+until n3.prime_division[count].last == 1
+  count = count - 1
+end
+return n3.prime_division[count].first
+
+
+# 4 - A palindromic number reads the same both ways.
+#The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+# Find the largest palindrome made from the product of two 3-digit numbers.
+
+n4 = []
+999.downto(100) do |i|
+  999.downto(100) do |x|
+    # starting at 999 go down to 100, and multiply against the same range
+    # then if the product is a palindrome push it to the array
+    n4 << i*x if i*x == (i*x).to_s.reverse.to_i
+  end
+end
+# sort the array in ascending order and pick the last(largest) value
+return n4.sort.last
+
+
+# 5 - 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+# What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+n5 = 2520
+until n5%1==0 && n5%2==0 && n5%3==0 && n5%4==0 && n5%5==0 && n5%6==0 && n5%7==0 && n5%8==0 && n5%9==0 && n5%10==0 && n5%11==0 && n5%12==0 && n5%13==0 && n5%14==0 && n5%15==0 && n5%16==0 && n5%17==0 && n5%18==0 && n5%19==0 && n5%20==0
+  n5 += 1
+end
+return n5
