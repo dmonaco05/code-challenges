@@ -68,3 +68,21 @@ until n5%1==0 && n5%2==0 && n5%3==0 && n5%4==0 && n5%5==0 && n5%6==0 && n5%7==0 
   n5 += 1
 end
 return n5
+
+
+# 6 - The sum of the squares of the first ten natural numbers is 12 + 22 + ... + 102 = 385
+# The square of the sum of the first ten natural numbers is (1 + 2 + ... + 10)2 = 552 = 3025
+# Hence the difference between the sum of the squares of the first ten natural numbers and 
+# the square of the sum is 3025 − 385 = 2640.
+# Find the difference between the sum of the squares of the first one hundred natural numbers 
+# and the square of the sum.
+
+n6 = 100
+range = (1..n6)
+squares = []
+# create array of squared values and add them up
+range.each {|i| squares << i * i }
+sum_of_squares = squares.reduce(:+)
+# square the sum of values
+square_of_sum_of_range = range.reduce(:+) * range.reduce(:+)
+return (square_of_sum_of_range - sum_of_squares)
